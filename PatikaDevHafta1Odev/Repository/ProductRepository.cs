@@ -37,6 +37,7 @@ namespace PatikaDevHafta1Odev.Repository
             return product;
         }
 
+
         public async Task<Product> DeleteProduct(Product product)
         {
             _context.Products.Remove(product);
@@ -45,6 +46,7 @@ namespace PatikaDevHafta1Odev.Repository
             await _context.SaveChangesAsync();
             return product;
         }
+
     }
 
 }

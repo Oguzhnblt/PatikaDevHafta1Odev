@@ -11,7 +11,7 @@ using PatikaDevHafta1Odev.Context;
 namespace PatikaDevHafta1Odev.Migrations
 {
     [DbContext(typeof(PatikaContext))]
-    [Migration("20230206135112_init")]
+    [Migration("20230206155606_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -27,7 +27,8 @@ namespace PatikaDevHafta1Odev.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnOrder(1);
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 

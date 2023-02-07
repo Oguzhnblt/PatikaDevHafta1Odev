@@ -1,4 +1,5 @@
-﻿using PatikaDevHafta1Odev.Entities;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using PatikaDevHafta1Odev.Entities;
 
 namespace PatikaDevHafta1Odev.Repository
 {
@@ -10,7 +11,8 @@ namespace PatikaDevHafta1Odev.Repository
         Task<Product> UpdateProduct(Product product);
         Task<Product> DeleteProduct(Product product);
 
-       
+
+
 
     }
 }
