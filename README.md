@@ -14,4 +14,4 @@ Routing kullanılmalıdır.Model binding işlemleri hem body den hemde query den
 
 Bonus:Standart crud işlemlerine ek olarak, listeleme ve sıralama işlevleride eklenmelidir. Örn: /api/products/list?name=abc
 
-SQL Server bağlantısı appsettingJson üzerinde yapılmıştır.
+SQL Server bağlantısı appsetting.json üzerinde yapılmıştır.
