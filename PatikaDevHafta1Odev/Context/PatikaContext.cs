@@ -8,7 +8,7 @@ namespace PatikaDevHafta1Odev.Context
         public PatikaContext(DbContextOptions<PatikaContext> options)
      : base(options)
         {
-
+            // Kendi SQL Server bağlantınızı appsettings.json üzerinden değiştirebilirsiniz.
         }
 
         public DbSet<Product> Products { get; set; }

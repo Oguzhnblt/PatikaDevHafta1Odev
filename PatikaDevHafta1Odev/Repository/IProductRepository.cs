@@ -3,6 +3,9 @@ using PatikaDevHafta1Odev.Entities;
 
 namespace PatikaDevHafta1Odev.Repository
 {
+    /// <summary>
+    /// Ürün Repo Interface
+    /// </summary>
     public interface IProductRepository
     {
         Task<IEnumerable<Product>> GetProducts();

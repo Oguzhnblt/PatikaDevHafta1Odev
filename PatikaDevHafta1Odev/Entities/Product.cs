@@ -7,7 +7,7 @@ namespace PatikaDevHafta1Odev.Entities
     public class Product
     {
         [Required]
-        [Column(Order = 1)]
+        [Column(Order = 1)]  // Tablonun her zaman 1 numaralı ID'den başlaması için
         public int Id { get; set; }
 
         [Required]

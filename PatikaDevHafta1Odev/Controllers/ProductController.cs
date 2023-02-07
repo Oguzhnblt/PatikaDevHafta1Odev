@@ -17,14 +17,14 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetProducts()
+        public async Task<IActionResult> GetProducts() // Bütün ürünleri listeleme 
         {
             var products = await _productRepository.GetProducts();
             return Ok(products);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetProductById(int id)
+        public async Task<IActionResult> GetProductById(int id) // ID'ye Göre Ürün Listeleme 
         {
             var product = await _productRepository.GetProductById(id);
             if (product == null)
@@ -35,7 +35,7 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddProduct([FromBody] Product product)
+        public async Task<IActionResult> AddProduct([FromBody] Product product) // Ürün Ekleme 
         {
             if (!ModelState.IsValid)
             {
@@ -46,7 +46,7 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product)
+        public async Task<IActionResult> UpdateProduct(int id, [FromBody] Product product) // ID'ye Göre Ürün Güncelleme 
         {
             if (!ModelState.IsValid)
             {
@@ -63,7 +63,7 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
         [HttpPatch("{id}")]
-        public async Task<IActionResult> UpdatePartialProduct(int id, [FromBody] JsonPatchDocument<Product> product)
+        public async Task<IActionResult> UpdatePartialProduct(int id, [FromBody] JsonPatchDocument<Product> product) // Ürünün belli bir özelliğini değiştirme
         {
             if (!ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteProduct(int id)
+        public async Task<IActionResult> DeleteProduct(int id) // ID'ye Göre Ürün Silme 
         {
             var product = await _productRepository.GetProductById(id);
             if (product == null)
@@ -94,10 +94,10 @@ namespace PatikaDevHafta1Odev.Controllers
         }
 
 
-        // LİSTELEME VE SIRALAMA İŞLEVLERİ 
+        // LİSTELEME VE SIRALAMA İŞLEVLERİ  -- İsim, Fiyat olarak sıralama ve listeleme yapma 
 
         [HttpGet("list")]
-        public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string sortOrder)
+        public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string sortOrder) 
         {
             var products = await _productRepository.GetProducts();
             if (!String.IsNullOrEmpty(name))
