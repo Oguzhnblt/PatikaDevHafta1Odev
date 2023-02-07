@@ -97,7 +97,7 @@ namespace PatikaDevHafta1Odev.Controllers
         // LİSTELEME VE SIRALAMA İŞLEVLERİ  -- İsim, Fiyat olarak sıralama ve listeleme yapma 
 
         [HttpGet("list")]
-        public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string sortOrder) 
+        public async Task<IActionResult> GetProducts([FromQuery] string name, [FromQuery] string sortOrder)
         {
             var products = await _productRepository.GetProducts();
             if (!String.IsNullOrEmpty(name))
